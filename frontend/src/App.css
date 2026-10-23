@@ -353,3 +353,138 @@ button:disabled {
     align-items: flex-start;
   }
 }
+
+
+
+/* ==========================================
+   Weather feature additions
+   ========================================== */
+
+/* Match the existing input design for the interval dropdown */
+.location-grid select {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  outline: none;
+  background: #fff;
+  color: #172033;
+  font: inherit;
+}
+
+.location-grid select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 12%);
+}
+
+/* Route risk information */
+.risk-summary {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.weather-coverage {
+  color: #475569;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+/* Selected route's weather details */
+.checkpoint-section {
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid #e2e8f0;
+  color: #172033;
+}
+
+.checkpoint-section h3 {
+  margin: 0 0 10px;
+  color: #172033;
+  font-size: 1.15rem;
+}
+
+.checkpoint-section > p {
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Weather checkpoint cards */
+.checkpoint-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.checkpoint-card {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  color: #334155;
+  overflow-wrap: anywhere;
+}
+
+.checkpoint-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.checkpoint-heading > strong {
+  color: #172033;
+  font-size: 1rem;
+}
+
+.risk-pill {
+  display: inline-block;
+  padding: 5px 9px;
+  border: 1px solid;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.checkpoint-card p {
+  margin: 8px 0;
+  color: #475569;
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.checkpoint-card p strong {
+  color: #334155;
+}
+
+.checkpoint-card ul {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  color: #92400e;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.checkpoint-card li + li {
+  margin-top: 4px;
+}
+
+/* Keep weather results readable on smaller screens */
+@media (max-width: 720px) {
+  .checkpoint-list {
+    grid-template-columns: 1fr;
+  }
+
+  .checkpoint-heading {
+    align-items: flex-start;
+  }
+}
