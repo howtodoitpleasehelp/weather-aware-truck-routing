@@ -1,0 +1,355 @@
+
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #172033;
+  background: #f4f6fa;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.app {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 36px 0;
+  color: #172033;
+}
+
+.app-header {
+  margin-bottom: 26px;
+}
+
+.eyebrow {
+  color: #1d4ed8;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.app-header h1 {
+  margin: 8px 0;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  letter-spacing: -0.04em;
+  color: #172033;
+}
+
+.app-header > p:last-child,
+.muted,
+.field-help {
+  color: #475569;
+}
+
+.app-header > p:last-child {
+  line-height: 1.6;
+}
+
+.panel,
+.map-panel,
+.routes-section {
+  margin-bottom: 22px;
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: white;
+  color: #172033;
+  box-shadow: 0 5px 22px rgb(15 23 42 / 4%);
+}
+
+.panel h2,
+.map-panel h2,
+.routes-section h2 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  color: #172033;
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 22px 0;
+}
+
+.location-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  color: #172033;
+}
+
+.field-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #172033;
+}
+
+.location-grid input {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  outline: none;
+  background: #fff;
+  color: #172033;
+}
+
+.location-grid input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 12%);
+}
+
+.field-help {
+  font-size: 0.78rem;
+}
+
+.panel form > button {
+  min-height: 46px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 9px;
+  background: #2563eb;
+  color: white;
+  font-weight: 700;
+}
+
+.panel form > button:hover {
+  background: #1d4ed8;
+}
+
+.message {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
+.error-message {
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.notice-message {
+  background: #eff6ff;
+  color: #1e40af;
+}
+
+.map-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  color: #172033;
+}
+
+.map-heading p,
+.routes-section > p {
+  margin: 6px 0 16px;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.map-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-size: 0.85rem;
+  color: #172033;
+}
+
+.secondary {
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: white;
+  color: #334155;
+}
+
+.secondary.active {
+  border-color: #2563eb;
+  background: #eff6ff;
+  color: #1e40af;
+  font-weight: 700;
+}
+
+.map-container {
+  height: 480px;
+  overflow: hidden;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  background: #e2e8f0;
+}
+
+.leaflet-map {
+  width: 100%;
+  height: 100%;
+}
+
+.custom-marker-wrapper {
+  border: 0;
+  background: transparent;
+}
+
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+  color: #334155;
+  font-size: 0.82rem;
+}
+
+.map-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.origin-dot {
+  background: #16865c;
+}
+
+.destination-dot {
+  background: #d94841;
+}
+
+.legend-line {
+  display: inline-block;
+  width: 22px;
+  height: 4px;
+  border-radius: 4px;
+}
+
+.selected-line {
+  background: #2563eb;
+}
+
+.alternative-line {
+  background: #8795a8;
+}
+
+.route-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.route-card {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 9px;
+  width: 100%;
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  color: #172033;
+  text-align: left;
+  transition: border-color 150ms ease, background 150ms ease;
+}
+
+.route-card:hover {
+  border-color: #93b4f8;
+}
+
+.route-card.selected {
+  border: 2px solid #2563eb;
+  padding: 17px;
+  background: #f8faff;
+  color: #172033;
+}
+
+.route-label {
+  color: #334155;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.route-card strong {
+  font-size: 1.7rem;
+  letter-spacing: -0.03em;
+  color: #172033;
+}
+
+.route-card > span {
+  font-size: 0.88rem;
+  color: #334155;
+}
+
+.selected-label {
+  color: #1d4ed8;
+  font-weight: 800;
+}
+
+.app-footer {
+  padding: 8px 0 18px;
+  color: #475569;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .app {
+    width: min(100% - 20px, 1180px);
+    padding-top: 22px;
+  }
+
+  .panel,
+  .map-panel,
+  .routes-section {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .location-grid,
+  .route-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-container {
+    height: 390px;
+  }
+
+  .map-controls {
+    align-items: flex-start;
+  }
+}
